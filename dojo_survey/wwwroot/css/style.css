@@ -1,0 +1,17 @@
+.wrapper {
+    align-items: center;
+    margin: auto;
+}
+form {
+    display: inline-block;
+    margin-left: 35%;
+    border: 1px solid black;
+    padding: 20px;
+    width: 250px;
+}
+input {
+    display: block;
+}
+p {
+    display: inline-block;
+}

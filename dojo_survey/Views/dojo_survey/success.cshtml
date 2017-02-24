@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title></title>
+        <link rel="stylesheet" href="~/css/success.css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+           <h2>Submitted Info</h2>
+           <table>
+               <tr>
+                   <th>Name:</th>
+                   <td>@ViewBag.name</td>
+               </tr>
+               <tr>
+                   <th>Dojo Location:</th>
+                   <td>@ViewBag.location</td>
+               </tr>
+               <tr>
+                   <th>Favorite Language:</th>
+                   <td>@ViewBag.language</td>
+               </tr>
+               <tr>
+                   <th>Comment:</th>
+                   <td>@ViewBag.comment</td>
+               </tr>
+           </table>
+           <!--<form action="/goback" method="post">
+               <input type="submit" value="Go Back">
+           </form>-->
+           <a href="/">Go Back</a>
+        </div>
+    </body>
+</html>

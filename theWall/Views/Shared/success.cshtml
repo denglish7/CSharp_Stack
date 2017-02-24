@@ -1,0 +1,40 @@
+@{
+    ViewData["Title"] = "The Wall";
+}
+
+<div class="wrapper">
+    <form action="logoff">
+        <input type="submit" value="Log Out">
+    </form>
+    
+    <h1>CodingDojo Wall</h1>
+    <p>Welcome @ViewBag.user.first_name</p>
+    <form class="message" action="/addMessage" method="POST">
+        Post a message<textarea name="message" id="" cols="30" rows="5"></textarea>
+        <input type="submit" value="Post a message">
+    </form>
+    <p>@ViewBag.messageErrors</p>
+            @{
+                    foreach(var message in @ViewBag.messages)
+                    {
+                        <h3>@message.user.first_name @message.user.last_name - @message.created_at.ToString("MMMM dd, yyyy")</h3>
+                        <p>@message.message</p>
+                        
+                        <a href="/delete/@message.Id">Delete</a>
+                        foreach(var comment in @ViewBag.comments)
+                        {
+                            if(@message.Id == @comment.message_id)
+                            {
+                                <h3 class="comments">@comment.user.first_name @comment.user.last_name - @comment.created_at.ToString("MMMM dd, yyyy")</h3>
+                                <p class ="comments">@comment.comment</p>
+                            }
+                        }
+                        <form class="comments" action="/addComment/@message.Id" method="POST">
+                            Post a comment<textarea name="comment" id="" cols="30" rows="3"></textarea>
+                            <button type="submit">Post a comment</button>
+                        </form>
+                    }
+                    
+            }
+</div>
+

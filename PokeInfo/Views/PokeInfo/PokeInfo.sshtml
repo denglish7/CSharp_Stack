@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+        <title>Great Number Game</title>
+        <link rel="stylesheet" href="Content/style.css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Height</th>
+                    <th>Weight</th>
+                </tr>
+            
+                <tr>
+                    <th>@ViewBag.name</th>
+                    <th>@ViewBag.type</th>
+                    <th>@ViewBag.height</th>
+                    <th>@ViewBag.weight</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

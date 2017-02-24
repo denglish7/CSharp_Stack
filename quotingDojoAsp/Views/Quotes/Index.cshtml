@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "QuotingDojo";
+}
+
+<div class="wrapper">
+    <h1>Welcome to QuotingDojo</h1>
+    <form action="addQuote" method="POST">
+        Your Name: <input type="text" name="name">
+        Your quote: <textarea name="quote" id="" cols="30" rows="10"></textarea>
+        <input type="submit" value="Add my quote!">
+    </form>
+    <form action="skipToQuotes">
+        <input type="submit" value="Skip to quotes!">
+    </form>
+    <p>@ViewBag.Quotes</p>
+</div>
+
+<div>
+    @{
+            foreach(var error in @ViewBag.errors)
+            {
+                //If there are any errors for a field...
+                if(@error.Errors.Count > 0)
+                {
+                    // We show the first error for that field
+                    <p>@error.Errors[0].ErrorMessage</p>
+                }
+            }
+    }
+</div>

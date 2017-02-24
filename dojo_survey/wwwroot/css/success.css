@@ -1,0 +1,10 @@
+.wrapper {
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    text-align: left;
+    margin-left: 400px;
+}

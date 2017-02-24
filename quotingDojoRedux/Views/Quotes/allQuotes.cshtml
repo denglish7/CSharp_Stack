@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "QuotingDojo";
+}
+
+<div class="wrapper">
+    <a href="success">Add a Quote</a>
+    <h1>Here are the awesome quotes!</h1>
+    
+        @{    
+            foreach(var quote in @ViewBag.quotes)
+            {
+                <p>"@quote.quote"</p>
+                <p>@quote.user.first_name @quote.user.last_name @quote.created_at</p>
+                if(@quote.user.Id == @ViewBag.myquotes)
+                {
+                    <a href="/delete/@quote.Id" >Delete</a>
+                    <a href="/editPage/@quote.Id" >Edit</a>
+                }
+            }
+        }
+    </div>
+</div>

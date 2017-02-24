@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="Content/style.css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+            <form class="" action="" method="post">
+                Your Gold:<input type="text" name="name" value="@ViewBag.your_gold">
+            </form>
+            <div class="location farm">
+                <h2>Farm</h2>
+                <p>(earns 10-20 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="location cave">
+                <h2>Cave</h2>
+                <p>(earns 5-10 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="location house">
+                <h2>House</h2>
+                <p>(earns 2-5 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="location casino">
+                <h2>Casino</h2>
+                <p>(earns/takes 0-50 golds)</p>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <p>Activities</p>
+            <div class="activities">
+                @Each
+                    @Current
+                @EndEach
+            </div>
+            <form action="/reset" method="POST">
+                    <input type="submit" value="Reset"/>
+            </form>
+        </div>
+    </body>
+</html>

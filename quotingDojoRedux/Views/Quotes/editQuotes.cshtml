@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "QuotingDojo";
+}
+
+<div class="wrapper">
+    <form action="logoff">
+        <input type="submit" value="Log Out">
+    </form>
+    
+    <h1>Edit Your Quote</h1>
+    <form action="/edit/@ViewBag.update" method="POST">
+        Your quote: <textarea name="quote" id="" cols="30" rows="10">@ViewBag.quoteToEdit.quote</textarea>  
+        <input type="submit" value="Update my quote!">
+    </form>
+  
+    <form action="/skipToQuotes">
+        <input type="submit" value="Back to quotes!">
+    </form>
+    <div>
+</div>
+

@@ -1,0 +1,10 @@
+@{
+    ViewData["Title"] = "Random Word Generator";
+}
+<h3>Random Word(attempt # @ViewBag.counter)</h3>
+<div>
+    <p>@ViewBag.randomWord</p>
+</div>
+<form action="generate" method="POST">
+    <input type="submit" value="Generate">
+</form>
